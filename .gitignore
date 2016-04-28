@@ -10,3 +10,5 @@ tiles/liberdia.mbtiles
 tiles/osm.mbtiles
 
 tiles/liberdia.mbtiles
+
+*.geojson
