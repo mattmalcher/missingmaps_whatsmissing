@@ -12,3 +12,5 @@ tiles/osm.mbtiles
 tiles/liberdia.mbtiles
 
 *.geojson
+
+liberia_missing_maps.tiff
