@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ecuador: Missing maps</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+        <link href='http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css' rel='stylesheet' />
+        <script src='http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js'></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise"></script>
+        <script src="js/leaflet-bing-layer.min.js"></script>
+        <link href='css/map.css' rel='stylesheet' />
+        <script type="text/javascript">var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46399763-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <!-- Page content -->
+        <div id="container" class="fill">
+            <div id="header">
+              <div class="row">               
+                 <div class="col-md-12">
+                    <h2>Ecuador: Where the missing maps are</h2>
+                 </div>
+             </div>
+             <div class="row">
+                 <div id="header_desc" class="col-md-12">
+                     <p>A comparison of <a href="http://www.worldpop.org.uk/" target="_blank">World Pop</a> (population per 100m x 100m squared) and <a href="https://www.openstreetmap.org/" target="_blank">OSM</a> buildings (Apr 2016).  Full write up can be read <a href="">here</a>. Use the controls in the top right to view satellite imagery or OSM basemap. Contact <a href="https://twitter.com/Simon_B_Johnson" target="_blank">@simon_b_johnson</a>.</p>
+                 </div>
+           </div>
+           <div class="row">
+             <div id='map' class="col-md-12"></div>
+           </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>

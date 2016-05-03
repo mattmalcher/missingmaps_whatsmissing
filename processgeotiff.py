@@ -7,7 +7,7 @@ import numpy as np
 
 def array_to_raster(array,geotransform,projection):
 
-    dst_filename = 'liberia_missing_maps.tiff'
+    dst_filename = 'ecuador_missing_maps.tiff'
 
     driver = gdal.GetDriverByName('GTiff')
 
@@ -30,7 +30,7 @@ driver.Register()
 
 #Open raster and read number of rows, columns, bands
 #dataset = gdal.Open('geotiff/ECU_ppp_v2b_2015_UNadj.tif')
-dataset = gdal.Open('geotiff/LBR10adjv3.tif')
+dataset = gdal.Open('geotiff/ECU_ppp_v2b_2015_UNadj.tif')
 cols = dataset.RasterXSize
 print cols
 rows = dataset.RasterYSize
@@ -55,7 +55,7 @@ rasterarray = band.ReadAsArray(0,0,cols,rows)
 osmarray = [[0 for i in range(cols)] for j in range(rows)]
 print "Loading geojson:"
 #with open('ecuador_buildings.geojson') as data_file:
-with open('liberia_buildings.geojson') as data_file:
+with open('ecuador_buildings.geojson') as data_file:
     data = json.load(data_file)
     countf = len(data['features'])
     i=0
@@ -70,8 +70,8 @@ with open('liberia_buildings.geojson') as data_file:
         #different number of nested lists to get coordinates for different geojson
         #print feature to see how many are need. Improve script in future
         #print f
-        col = int(math.floor((f['geometry']['coordinates'][0][0][0]-gt[0])/gt[1]))
-        row = int(math.floor((f['geometry']['coordinates'][0][0][1]-gt[3])/gt[5]))
+        col = int(math.floor((f['geometry']['coordinates'][0][0][0][0]-gt[0])/gt[1]))
+        row = int(math.floor((f['geometry']['coordinates'][0][0][0][1]-gt[3])/gt[5]))
         if col>cols:
             print "col"
             print col
