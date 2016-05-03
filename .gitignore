@@ -14,3 +14,13 @@ tiles/liberdia.mbtiles
 *.geojson
 
 liberia_missing_maps.tiff
+
+maps/liberia/js/ecuador_buildings.json
+
+liberia_missing_maps.tiff.aux.xml
+
+geotiff/ECU_ppp_v2b_2015_UNadj.tif
+
+ecuador_missing_maps.tiff
+
+maps/ecuador/js/ecuador_buildings.json
