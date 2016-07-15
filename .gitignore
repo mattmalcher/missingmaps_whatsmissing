@@ -24,3 +24,7 @@ geotiff/ECU_ppp_v2b_2015_UNadj.tif
 ecuador_missing_maps.tiff
 
 maps/ecuador/js/ecuador_buildings.json
+
+geotiff/NGA14adjv1.tif
+
+tiles/liberia.mbtiles
