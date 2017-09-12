@@ -1,6 +1,6 @@
-from __future__ import division
-import gdal
-import json
+from __future__ import division # Changes division behaviour from python 2 classic (handles ints differently) to python 3 'true' division
+import gdal  # Geospatial Data Abstraction Library - handles vector and raster data, http://www.gdal.org/
+import json 
 import math
 import png
 import numpy as np
