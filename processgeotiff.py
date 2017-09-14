@@ -1,5 +1,5 @@
 from __future__ import division
-import gdal
+from osgeo import gdal
 import json
 import math
 import png
