@@ -1,0 +1,15 @@
+
+[out:json][timeout:25];
+// gather results
+(
+  // query part for: “building”
+  ( area["ISO3166-1"="BD"][admin_level=2]; )->.a;
+  way["building"](area.a);
+);
+// print results
+out body;
+>;
+out skel qt;
+
+This works for example... monaco "MC" but does
+

@@ -1,0 +1,15 @@
+// This query gets a geojson of the buildings in a bounding box
+
+[out:json][timeout:25];
+// gather results
+(
+  // query part for: “building”
+  way["building"]({{bbox}});
+);
+// print results
+out body;
+>;
+out skel qt;
+
+
+

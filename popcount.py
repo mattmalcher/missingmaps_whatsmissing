@@ -1,4 +1,4 @@
-# from __future__ import division # Changes division behaviour from python 2 classic (handles ints differently) to python 3 'true' division
+from __future__ import division # Changes division behaviour from python 2 classic (handles ints differently) to python 3 'true' division
 
 from osgeo import gdal # Geospatial Data Abstraction Library - handles vector and raster data, http://www.gdal.org/
 # https://github.com/dezhin/pygdal/ - for tips on installing GDAL and getting it talking to python
@@ -6,16 +6,15 @@ from osgeo import gdal # Geospatial Data Abstraction Library - handles vector an
 import json
 import math
 
-import png
-import numpy as np
+# import png
+# import numpy as np
 
 #Set GeoTiff driver
 driver = gdal.GetDriverByName("GTiff")
 driver.Register()
 
 #Open raster and read number of rows, columns, bands
-#dataset = gdal.Open('geotiff/ECU_ppp_v2b_2015_UNadj.tif')
-dataset = gdal.Open('geotiff/ECU_ppp_v2b_2015_UNadj.tif')
+dataset = gdal.Open('Input Data/WorldPop/139_BGD_ppp_v2b_2015/BGD_ppp_v2b_2015.tif')
 cols = dataset.RasterXSize
 print cols
 rows = dataset.RasterYSize
@@ -39,6 +38,8 @@ rasterarray = band.ReadAsArray(0,0,cols,rows)
 #create empty osm array of 0s
 osmarray = [[0 for i in range(cols)] for j in range(rows)]
 print "Loading geojson:"
+
+# http://download.geofabrik.de/asia/bangladesh.html
 
 with open('ecuador_buildings.geojson') as data_file:
     data = json.load(data_file)
