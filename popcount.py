@@ -13,8 +13,9 @@ import math
 driver = gdal.GetDriverByName("GTiff")
 driver.Register()
 
+pop_tiff='Input Data/WorldPop/162_DJI15adjv4/DJI15adjv4.tif'
 #Open raster and read number of rows, columns, bands
-dataset = gdal.Open('Input Data/WorldPop/139_BGD_ppp_v2b_2015/BGD_ppp_v2b_2015.tif')
+dataset = gdal.Open(pop_tiff)
 cols = dataset.RasterXSize
 print cols
 rows = dataset.RasterYSize
@@ -35,13 +36,17 @@ band = dataset.GetRasterBand(1)
 #raster image as a list of lists
 rasterarray = band.ReadAsArray(0,0,cols,rows)
 
+
 #create empty osm array of 0s
 osmarray = [[0 for i in range(cols)] for j in range(rows)]
 print "Loading geojson:"
 
 # http://download.geofabrik.de/asia/bangladesh.html
 
-with open('ecuador_buildings.geojson') as data_file:
+# bld_json='Input Data/Converted/bangladesh buildings.geojson'
+bld_json='Input Data/Converted/djibouti-latest-buildings.osm.geojson'
+
+with open(bld_json) as data_file:
     data = json.load(data_file)
     countf = len(data['features'])
     i=0
